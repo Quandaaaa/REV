@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and Run Selected File",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${file}", // Chỉ compile file hiện tại
+                "-o",
+                "${fileDirname}/a.out" // Output tên file binary là "a.out" trong cùng thư mục
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compile the current selected file"
+        },
+        {
+            "label": "Run Executable",
+            "type": "shell",
+            "command": "${fileDirname}/a.out",
+            "args": [],
+            "problemMatcher": [],
+            "detail": "Run the compiled output file"
+        }
+    ]
+}
